@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- define angular app -->
+<html ng-app="SpringBoardApp">
+<head>
+    <!-- SCROLLS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+    <!-- SPELLS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="script.js"></script>
+
+    <title>SpringBoard</title>
+</head>
+<!-- define angular controller -->
+<body ng-controller="mainController">
+    <nav class="navbar navbar-fixed-top" style="background-color:white;">
+        <div class="container-fluid">
+            <div class="col-sm-4 navbar-header">
+                <a class="navbar-brand" style="color:black;" href="#">SpringBoard</a>
+            </div>
+            <form class="col-sm-4 navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search Course" ng-model="search" ng-change="change(text)" name="srch-term" id="srch-term">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit" ng-click="SearchQuery()">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                    <p ng-show="{{loading}}">&nbsp;Loading....</p>
+                </div>
+            </form>
+            <ul class=" col-sm-4 nav navbar-nav">
+                <li><a href="#Developer" style=" color:grey;">Developer</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="main">
+
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+        <div ng-view></div>
+    </div>
+
+
+    <hr />
+    <footer class="text-center">
+        <p>Developed With <i class="fa fa-heart" style="color:red;"></i> from <Strong>INDIA</Strong></p>
+    </footer>
+
+</body>
+</html>
