@@ -1,0 +1,45 @@
+<br />
+<br />
+<br />
+<hr />
+<div class="container">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+
+        <small>You Search for:<small><b>{{search}}</b></small></small>
+        <hr />
+        <div>
+            <div ng-repeat="entry in entries" ng-class-odd="'oddclass'" style="border-bottom:1px solid black;">
+                <h3>{{entry.name}}</h3>
+                <div class="row" ng-repeat="partner in entry.partnerIds">
+                    <div class="col-sm-4">
+                        <img style="width:100px;" class="img-rounded" src="{{partners[partner].logo}}" />
+                    </div>
+                    <div class="col-sm-8">
+                        <span style="color:gray;">
+                            <h4>{{partners[partner].name}}</h4>
+                        </span>
+                    </div>
+                    <hr />
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-8">
+                        <b>Instructors:</b>
+                        <div ng-repeat="instructor in entry.instructorIds">
+                            {{instructors[instructor].fullName}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+
+<style>
+    .oddclass {
+        background-color: lightyellow;
+    }
+</style>
